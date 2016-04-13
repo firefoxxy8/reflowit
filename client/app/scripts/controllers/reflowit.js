@@ -14,7 +14,7 @@ angular.module('reflowitApp')
         $scope.reflowitObj = {
             status: 'idle',
             pdfUrl: null,
-            refresh: true,
+            refresh: false,
             response: null
         }
 
@@ -46,10 +46,10 @@ angular.module('reflowitApp')
             var deferred = d || $q.defer();
             var url = $rootScope.apiEndpoint + '/?url=' + encodeURIComponent(pdfUrl);
             if (refresh) url += '&refresh=true';
-            console.log(url);
+            //console.log(url);
             $http.get(url).then(
                 function (response) {
-                    console.log('status:',response.data.status);
+                    //console.log('status:',response.data.status);
                     if (response.data.status == 'ready') {
                         deferred.resolve(response.data);
                     } else {
