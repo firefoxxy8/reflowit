@@ -19,8 +19,18 @@
     </div>
     <div class="row" ng-if="reflowitObj.response">
         <div class="col-xs-12">
-          <a href="{{reflowitObj.response.mobile_pdf}}">Mobile PDF</a>
-          <!-- <pre pretty-json="reflowitResponse"/> -->
+          <a href="{{reflowitObj.response.original_pdf}}" target="_blank">Original PDF</a>
+        </div>
+      </div>
+      <div class="row" ng-if="reflowitObj.response">
+          <div class="col-xs-12">
+            <a href="{{reflowitObj.response.mobile_pdf}}" target="_blank">Mobile PDF</a>
+          </div>
+        </div>
+      <div class="row" ng-if="reflowitObj.response">
+          <div class="col-xs-12">
+            <pre pretty-json="reflowitObj.response"/>
+          </div>
         </div>
     </div>
 
